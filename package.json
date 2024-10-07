@@ -1,0 +1,50 @@
+{
+  "name": "tab-deleter",
+  "displayName": "Tab Deleter",
+  "description": "It will delete the unused tabs after certain fixed time",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "icon": "tabdeleter.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "tab-deleter.tabdeleter",
+        "title": "Tab Deleter"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Tab Deleter Configuration",
+      "properties": {
+        "tabDeleter.inactiveTime": {
+          "type": "number",
+          "default": 5000,
+          "description": "Time in milliseconds after which an inactive tab will be deleted."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.93.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1"
+  },
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
+}
